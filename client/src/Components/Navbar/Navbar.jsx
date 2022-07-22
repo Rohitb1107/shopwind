@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { Cart } from "react-bootstrap-icons";
 
 const Navbar = () => {
   return (
@@ -34,6 +35,10 @@ const Navbar = () => {
                 <Link to="#">Contacts us</Link>
               </li>
             </ul>
+            <div className="cart-div">
+              <Cart color="royalblue" size={25} />
+              (0)
+            </div>
             <div className="d-flex">
               <button className="btn btn-primary" type="submit">
                 Sign in

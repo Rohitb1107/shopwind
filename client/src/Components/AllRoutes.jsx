@@ -19,7 +19,7 @@ const AllRoutes = () => {
         <Route path="/womens" element={<Womens />}></Route>
         <Route path="/kids" element={<Kids />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

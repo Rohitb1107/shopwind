@@ -16,6 +16,7 @@ import Slider from "react-slick";
 import "./HeroPart.css";
 import banner1 from "../../assets/banner-1.jpg";
 import banner2 from "../../assets/banner-2.jpg";
+import banner3 from "../../assets/banner-3.jpg";
 
 // Settings for the slider
 const settings = {
@@ -54,9 +55,9 @@ export default function HeroPart() {
       image: banner2,
     },
     {
-      title: "Design Projects 3",
-      text: "Smart products",
-      image: banner1,
+      title: "Fashion Cosmetic",
+      text: "Cosmetic Best Selling",
+      image: banner3,
     },
   ];
 
