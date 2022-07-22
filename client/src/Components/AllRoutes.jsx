@@ -7,9 +7,10 @@ const AllRoutes = () => {
   return (
     <div>
       <Navbar />
-      <Routes>
+      <Home />
+      {/* <Routes>
         <Route to="/" element={<Home />}></Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 };
