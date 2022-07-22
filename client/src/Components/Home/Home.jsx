@@ -3,6 +3,7 @@ import HeroPart from "../HeroPart/HeroPart";
 import axios from "axios";
 import "./Home.css";
 import Product from "../Product/Product";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -57,6 +58,10 @@ const Home = () => {
             <div className="img-title">Tips on having a happy life</div>
           </div>
         </div>
+      </div>
+
+      <div className="footer-div">
+        <Footer />
       </div>
     </div>
   );
