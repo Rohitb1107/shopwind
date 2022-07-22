@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { Cart } from "react-bootstrap-icons";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const count = useSelector((count) => count.handleCart);
+  console.log(count);
   return (
     <div className="nav-div">
       <nav className="navbar navbar-expand-lg">
@@ -36,8 +39,7 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="cart-div">
-              <Cart color="royalblue" size={25} />
-              (0)
+              <Cart color="royalblue" size={25} />({count.length})
             </div>
             <div className="d-flex">
               <button className="btn btn-primary" type="submit">

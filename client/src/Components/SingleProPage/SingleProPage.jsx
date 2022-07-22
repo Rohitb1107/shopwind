@@ -19,13 +19,19 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
 import axios from "axios";
-
+import { useSelector, useDispatch } from "react-redux";
+import { addCart } from "../../Redux/Actions/action";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function SingleProdPage() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addCart(product));
+  };
 
   useEffect(() => {
     getData();
@@ -91,10 +97,7 @@ export default function SingleProdPage() {
               >
                 {product.title}
               </Text>
-              <Text fontSize={"lg"}>
-              {product.description}
-
-              </Text>
+              <Text fontSize={"lg"}>{product.description}</Text>
             </VStack>
             <Box>
               <Text
@@ -192,6 +195,7 @@ export default function SingleProdPage() {
               transform: "translateY(2px)",
               boxShadow: "lg",
             }}
+            onClick={() => addProduct(product)}
           >
             Add to cart
           </Button>

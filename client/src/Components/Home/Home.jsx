@@ -5,17 +5,13 @@ import "./Home.css";
 import ProductCard from "../ProductCard/ProductCard";
 import Footer from "../Footer/Footer";
 import { Button, ButtonGroup } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "../../Redux/Actions/action";
+
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
 
-  const dispatch = useDispatch();
-  const addProduct = (product) => {
-    dispatch(addCart(product));
-  };
+
 
   useEffect(() => {
     getData();
