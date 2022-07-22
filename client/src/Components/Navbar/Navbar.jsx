@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const count = useSelector((count) => count.handleCart);
-  console.log(count);
   return (
     <div className="nav-div">
       <nav className="navbar navbar-expand-lg">
@@ -38,9 +37,11 @@ const Navbar = () => {
                 <Link to="#">Contacts us</Link>
               </li>
             </ul>
-            <div className="cart-div">
-              <Cart color="royalblue" size={25} />({count.length})
-            </div>
+            <Link to="/cart">
+              <button className="cart-div">
+                <Cart color="royalblue" size={25} />({count.length})
+              </button>
+            </Link>
             <div className="d-flex">
               <button className="btn btn-primary" type="submit">
                 Sign in

@@ -7,6 +7,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import SingleProdPage from "./SingleProPage/SingleProPage";
 import Womens from "./Womens/Womens";
+import CartPage from "./CartPage/CartPage";
 
 const AllRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AllRoutes = () => {
         <Route path="/mens" element={<Mens />}></Route>
         <Route path="/womens" element={<Womens />}></Route>
         <Route path="/kids" element={<Kids />}></Route>
+        <Route path="/cart" element={<CartPage />}></Route>
       </Routes>
       <Footer />
     </div>

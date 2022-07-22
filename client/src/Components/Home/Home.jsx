@@ -11,8 +11,6 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
 
-
-
   useEffect(() => {
     getData();
   }, []);
