@@ -1,12 +1,17 @@
 .nav-div {
   width: 100%;
   background-color: aliceblue;
+  height: 5rem;
+  padding-top: 1rem;
 }
-
+.navbar-brand {
+  font-size: 1.3rem;
+}
 .ul-div ul {
   display: flex;
   gap: 1rem;
   margin-left: 5rem;
+  font-size: 1.2rem;
 }
 
 .ul-div a:hover {

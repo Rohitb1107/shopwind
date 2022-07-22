@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            My-Site
+            Shop-Wind
           </a>
           <div
             className="ul-div collapse navbar-collapse"
@@ -19,10 +19,13 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login">Login</Link>
+                <Link to="/Men's">Men's</Link>
               </li>
               <li className="nav-item">
-                <Link to="/register">Register</Link>
+                <Link to="/Women's">Women's</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/Kid's">Kid's</Link>
               </li>
               <li className="nav-item">
                 <Link to="#">About us</Link>
