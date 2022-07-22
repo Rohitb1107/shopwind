@@ -8,6 +8,7 @@ import { Button, ButtonGroup } from "@chakra-ui/react";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [filter, setFilter] = useState(data);
 
   useEffect(() => {
     getData();
@@ -17,7 +18,15 @@ const Home = () => {
     const url = "https://fakestoreapi.com/products";
     const response = await axios.get(url);
     setData(response.data);
+    setFilter(response.data);
+    console.log(filter);
   };
+
+  const filterProduct = (cat) => {
+    const updatedList = data.filter((x) => x.category === cat);
+    setFilter(updatedList);
+  };
+
   return (
     <div>
       <div className="hero-section-div">
@@ -26,16 +35,35 @@ const Home = () => {
 
       <div className="container btn-div">
         <ButtonGroup variant="solid" spacing="3">
-          <Button colorScheme="teal">All</Button>
-          <Button colorScheme="teal">Men's</Button>
-          <Button colorScheme="teal">Women's</Button>
-          <Button colorScheme="teal">Jewelery</Button>
-          <Button colorScheme="teal">Electronics</Button>
+          <Button onClick={() => setFilter(data)} colorScheme="teal">
+            All
+          </Button>
+          <Button
+            onClick={() => filterProduct("men's clothing")}
+            colorScheme="teal"
+          >
+            Men's
+          </Button>
+          <Button
+            onClick={() => filterProduct("women's clothing")}
+            colorScheme="teal"
+          >
+            Women's
+          </Button>
+          <Button onClick={() => filterProduct("jewelery")} colorScheme="teal">
+            Jewelery
+          </Button>
+          <Button
+            onClick={() => filterProduct("electronics")}
+            colorScheme="teal"
+          >
+            Electronics
+          </Button>
         </ButtonGroup>
       </div>
 
       <div className="prod-render-div display-products">
-        {data.map((item) => {
+        {filter.map((item) => {
           return (
             <div key={item.id}>
               <ProductCard data={item} />
