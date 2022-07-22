@@ -14,6 +14,7 @@ const AllRoutes = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/:id" element={<SingleProdPage />}></Route>
         <Route path="/mens" element={<Mens />}></Route>
         <Route path="/womens" element={<Womens />}></Route>
         <Route path="/kids" element={<Kids />}></Route>

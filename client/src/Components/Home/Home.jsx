@@ -34,6 +34,7 @@ const Home = () => {
       </div>
 
       <div className="container btn-div">
+        <div className="title-heading">DAILY DEALS</div>
         <ButtonGroup variant="solid" spacing="3">
           <Button onClick={() => setFilter(data)} colorScheme="teal">
             All

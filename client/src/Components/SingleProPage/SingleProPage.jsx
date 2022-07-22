@@ -18,8 +18,26 @@ import {
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
+import axios from "axios";
+
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export default function SingleProdPage() {
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const url = `https://fakestoreapi.com/products/${id}`;
+    const response = await axios.get(url);
+    setProduct(response.data);
+    console.log(product);
+  };
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -31,9 +49,7 @@ export default function SingleProdPage() {
           <Image
             rounded={"md"}
             alt={"product image"}
-            src={
-              "https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080"
-            }
+            src={product.image}
             fit={"cover"}
             align={"center"}
             w={"100%"}
@@ -47,14 +63,14 @@ export default function SingleProdPage() {
               fontWeight={600}
               fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
             >
-              Automatic Watch
+              {product.title}
             </Heading>
             <Text
               color={useColorModeValue("gray.900", "gray.400")}
               fontWeight={300}
               fontSize={"2xl"}
             >
-              $350.00 USD
+              ${product.price} USD
             </Text>
           </Box>
 
@@ -73,14 +89,11 @@ export default function SingleProdPage() {
                 fontSize={"2xl"}
                 fontWeight={"300"}
               >
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore
+                {product.title}
               </Text>
               <Text fontSize={"lg"}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                maxime modi nam officiis porro, quae, quisquam quos
-                reprehenderit velit? Natus, totam.
+              {product.description}
+
               </Text>
             </VStack>
             <Box>
@@ -91,7 +104,7 @@ export default function SingleProdPage() {
                 textTransform={"uppercase"}
                 mb={"4"}
               >
-                Features
+                {product.category}
               </Text>
 
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
