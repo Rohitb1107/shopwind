@@ -4,8 +4,12 @@
   height: 5rem;
   padding-top: 1rem;
 }
+.shop-logo {
+  margin-left: 10rem;
+}
+
 .navbar-brand {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .ul-div ul {
   display: flex;

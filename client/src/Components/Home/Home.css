@@ -1,0 +1,35 @@
+.prod-render-div {
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.blog-section {
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 20rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.blog {
+  display: flex;
+  gap: 5rem;
+}
+
+.img-title {
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  text-decoration: underline;
+}
+
+.img-title:hover {
+  color: blueviolet;
+}

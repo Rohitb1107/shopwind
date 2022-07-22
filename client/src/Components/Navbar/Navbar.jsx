@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className="nav-div">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="shop-logo navbar-brand" href="#">
             Shop-Wind
           </a>
           <div
