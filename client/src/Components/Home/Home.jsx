@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import HeroPart from "../HeroPart/HeroPart";
 import axios from "axios";
 import "./Home.css";
-import Product from "../Product/Product";
+import ProductCard from "../ProductCard/ProductCard";
 import Footer from "../Footer/Footer";
+import { Button, ButtonGroup } from "@chakra-ui/react";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -23,11 +24,21 @@ const Home = () => {
         <HeroPart />
       </div>
 
+      <div className="container btn-div">
+        <ButtonGroup variant="solid" spacing="3">
+          <Button colorScheme="teal">All</Button>
+          <Button colorScheme="teal">Men's</Button>
+          <Button colorScheme="teal">Women's</Button>
+          <Button colorScheme="teal">Jewelery</Button>
+          <Button colorScheme="teal">Electronics</Button>
+        </ButtonGroup>
+      </div>
+
       <div className="prod-render-div display-products">
         {data.map((item) => {
           return (
             <div key={item.id}>
-              <Product data={item} />
+              <ProductCard data={item} />
             </div>
           );
         })}
@@ -58,10 +69,6 @@ const Home = () => {
             <div className="img-title">Tips on having a happy life</div>
           </div>
         </div>
-      </div>
-
-      <div className="footer-div">
-        <Footer />
       </div>
     </div>
   );

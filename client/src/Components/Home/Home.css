@@ -1,7 +1,7 @@
 .prod-render-div {
   width: 80%;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
@@ -32,4 +32,9 @@
 
 .img-title:hover {
   color: blueviolet;
+}
+
+.btn-div {
+  text-align: center;
+  margin-top: 5rem;
 }
