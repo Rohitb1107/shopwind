@@ -1,4 +1,4 @@
 # shopwind
 
 Project in not completed 
-60% part done
+80% part done
